@@ -7,7 +7,7 @@
     "test": "rate limit, limit, nodejs, rate_limit",
     "start": "nodemon app.js"
   },
-  "type":"module",
+  "type": "module",
   "keywords": [
     "rate",
     "limit",
@@ -18,9 +18,16 @@
   "author": "Ermiyas (Yishak)",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.8.1",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-mongo-sanitize": "^2.2.0",
+    "helmet": "^8.1.0",
+    "hpp": "^0.2.3",
     "mongoose": "^9.0.0",
-    "nodemon": "^3.1.11"
+    "morgan": "^1.10.1",
+    "nodemon": "^3.1.11",
+    "xss-clean": "^0.1.4"
   }
 }
