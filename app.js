@@ -11,9 +11,12 @@ dontenv.config({
 const port = process.env.PORT || 3090;
 const mongoURL = process.env.DATABASE_CON_STRING;
 
+app.use((req, res, next) => {
+    console.log('Incoming request on url: ' + req.url + " Method: " + req.method);
+    next();
+})
 
-
-app.use("/data",
+app.post("/data",
     rateLimiter,
     async (req, res) => {
         try {
@@ -28,6 +31,10 @@ app.use("/data",
             })
         }
     });
+
+app.use((req, res) => {
+    return res.status(404).send("Resource not found.")
+});
 
 mongoose.connect(mongoURL)
     .then(() => {
