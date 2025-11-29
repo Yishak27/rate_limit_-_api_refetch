@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import APIService from './services/api.services';
+import APIService from './services/api.services.js';
 dotenv.config({
     path: ".env"
 })

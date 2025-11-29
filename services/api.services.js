@@ -1,4 +1,4 @@
-import constant from "../constant/constant";
+import constant from "../constant/constant.js";
 class APIService {
     static async fetchWithRetry(url, retries = constant.Config.RETRY_TIME) {
         try {
