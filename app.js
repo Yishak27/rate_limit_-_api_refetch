@@ -1,5 +1,14 @@
 import express from 'express';
 import dotenv from 'dotenv';
+
+import helmet from "helmet";
+import cors from "cors";
+import hpp from "hpp";
+import mongoSanitize from "express-mongo-sanitize";
+import xss from "xss-clean";
+import compression from "compression";
+import morgan from "morgan";
+
 import APIService from './services/api.services.js';
 dotenv.config({
     path: ".env"
@@ -7,7 +16,14 @@ dotenv.config({
 const app = express();
 const port = process.env.PORT || 3091;
 
+app.use(hpp());
+app.use(mongoSanitize());
+app.use(xss());
+app.use(compression());
+app.use(morgan("dev"));
 app.use(express.json());
+app.use(express.json());
+
 app.use((req, res, next) => {
     console.log('Incoming request on url: ' + req.url + " Method: " + req.method);
     next();
