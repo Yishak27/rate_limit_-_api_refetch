@@ -1,0 +1,18 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Rate limit using node js",
+  "main": "app.js",
+  "scripts": {
+    "test": "rate limit, limit, nodejs, rate_limit"
+  },
+  "keywords": [
+    "rate",
+    "limit",
+    "limit",
+    "nodejs",
+    "rate_limit"
+  ],
+  "author": "Ermiyas (Yishak)",
+  "license": "ISC"
+}
